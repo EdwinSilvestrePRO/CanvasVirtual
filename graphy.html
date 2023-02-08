@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graficos con juegos JS</title>
+    <link rel="stylesheet" href="./MainStyles.css">
+</head>
+<body>
+    <header>
+        <h1>Codevelp ES+</h1>
+    </header>
+    <form name="functs" class="functions">
+        <label>Functions:</label>
+        <label>moveTo()<input type="radio" name="Funct" value="moveTo" checked/> </label>
+        <label>lineTo()<input type="radio" name="Funct" value="lineTo"/> </label>
+        <label>Comment()<input type="radio" name="Funct" value="Comment"/> </label>
+        <label>arc()<input type="radio" name="Funct" value="arc"/> </label>
+        <label>quadraticCurveTo()<input type="radio" name="Funct" value="quadraticCurveTo"/> </label>
+        <label>bezierCurveTo()<input type="radio" name="Funct" value="bezierCurveTo"/> </label>
+        
+    </form>
+    <!-- implementation for easy work.. -->
+    <button type="button" class="b" id="restore">Reset</button>
+    <div class="main">
+        <div class="draws codes">
+            <p id="coordinate">X <i class="num x">0</i> ____ Y <i class="num y">0</i> </p>
+            <canvas width="600" height="550" id="graphy"></canvas>
+            <div data-controls>
+                <button id="back" disabled>back</button>
+                <button id="forward" disabled>forward</button>
+            </div>
+        </div>
+        <div class="codes">
+            <!-- the class: "falied" and "copied" -->
+            <button class="copy">copy</button>
+            <p id="count">lines code: <i class="num count">0</i></p>
+            <p id="code-grapy">code...</p>
+        </div>
+    </div>
+    
+    <template id="@arc">
+        <form id="arcValues" name="arcValues" method="javascript" class="arc" action="@arc">
+            <fieldset>
+                <div class="accept">
+                    <!-- yes -->
+                    <svg class="delete" width="30" height="30" style="cursor:pointer" id="yes-arc">
+                        <path d="M 2 10 L 12 30 L 30 0" stroke="#1dff1d" stroke-width="4" id="yes-arc" stroke-linejoin="round" fill="transparent" stroke-linecap="round" class="delete"></path>
+                    </svg>
+                    <!-- no -->
+                    <svg class="delete" width="30" height="30" style="cursor:pointer" id="exit-arc">
+                        <path d="M0 0 L 30 30 Z M 30 0 L0 30" stroke="red" stroke-width="4" id="exit-arc" stroke-linejoin="round" stroke-linecap="round" class="delete"></path>
+                    </svg>
+                </div>
+                <div class="legend">Arc:</div>
+                
+                <label data-implement="@arc-implementation">Radius: <input value="20" type="range" min="0" max="600" name="radius"/> </label>
+                
+                <label data-implement="@arc-implementation">StartAngle & EndAngle: <input placeholder="start" value="0" type="number" name="startAng" min="-360" max="720"/> <input placeholder="end" type="number" value="180" name="endAng"  min="-360" max="720"/></label>
+                
+                <label data-implement="@arc-implementation">Counter Clock wise: </label>
+                
+                <label data-implement="@arc-implementation" class="radius">yes<input type="radio" name="clockWise" value="true"/> </label>
+                <label data-implement="@arc-implementation" class="radius">no<input type="radio" name="clockWise" value="false" checked/> </label>
+            </fieldset>
+        </form>
+    </template>
+
+    <template id="@quadraticCurveTo">
+
+        <form class="quadratic" id="execQuadratic">
+            <div class="accept">
+                <!-- yes -->
+                <svg class="delete" width="30" height="30" style="cursor:pointer" id="yes-quadratic">
+                    <path d="M 2 10 L 12 30 L 30 0" stroke="#1dff1d" stroke-width="4" id="yes-quadratic" stroke-linejoin="round" fill="transparent" stroke-linecap="round" class="delete"></path>
+                </svg>
+                <!-- no -->
+                <svg class="delete" width="30" height="30" style="cursor:pointer" id="exit-quadratic">
+                    <path d="M0 0 L 30 30 Z M 30 0 L0 30" stroke="red" stroke-width="4" id="exit-quadratic" stroke-linejoin="round" stroke-linecap="round" class="delete"></path>
+                </svg>
+            </div>
+            <div class="legend">QuadraticCurveTo</div>
+            <label for="">Control Points X & Y</label>
+            <input type="number" name="x" placeholder="x" value="0" />
+            <input type="number" name="y" placeholder="y" value="0" />
+        </form>
+        
+    </template>
+
+    <template id="@bezierCurveTo">
+        <form class="bezier" id="bezierCurveTo">
+            <div class="accept">
+                <!-- yes -->
+                <svg class="delete" width="30" height="30" style="cursor:pointer" id="yes-bezier">
+                    <path d="M 2 10 L 12 30 L 30 0" stroke="#1dff1d" stroke-width="4" id="yes-bezier" stroke-linejoin="round" fill="transparent" stroke-linecap="round" class="delete"></path>
+                </svg>
+                <!-- no -->
+                <svg class="delete" width="30" height="30" style="cursor:pointer" id="exit-bezier">
+                    <path d="M0 0 L 30 30 Z M 30 0 L0 30" stroke="red" stroke-width="4" id="exit-bezier" stroke-linejoin="round" stroke-linecap="round" class="delete"></path>
+                </svg>
+            </div>
+            <div class="legend">BezierCurveTo:</div>
+            <label for="">Control Points X1 & Y1 & X2 & Y2</label>
+            <input type="number" name="x1" placeholder="x1" value="0" />
+            <input type="number" name="y1" placeholder="y1" value="0" />
+            <input type="number" name="x2" placeholder="x2" value="0" />
+            <input type="number" name="y2" placeholder="y2" value="0" />
+        </form>
+    </template>
+    
+    <script type="application/javascript" src="./interactivity.js"></script>
+</body>
+</html>

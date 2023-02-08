@@ -1,0 +1,186 @@
+ html::-webkit-scrollbar {display:none;}
+body, html {
+    margin:0px;
+    padding: 0px;
+}
+body {
+    background-color: black;
+    color: white;
+}
+header {
+    margin:0px;
+    padding:2px;
+    background-color: #444;
+    width:100vw;
+    text-align: center;
+}
+form.functions {
+    background-color:transparent;
+    padding:2px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-evenly;
+    align-items: baseline;
+    align-content: center;
+}
+form.functions label {
+    font-size: 2em;
+    border-radius: 1em;
+}
+form.functions label input {
+    width:30px;
+    height:30px;
+}
+div.main {
+    margin-top:1em;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+div.main canvas {
+    background-color: rgba(8, 8, 8, 0.582);
+    padding:0px;
+    margin-bottom:1em;
+    display:block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: crosshair;
+}
+div.main div.codes {
+    border:none;
+}
+div.main div.codes button.copy {
+    background-color:purple;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition:400ms background-color ease;
+}
+div.main div.codes button.copy.copied {
+    background-color: rgb(9, 187, 9);
+    color: white;
+}
+div.main div.codes button.copy.falied {
+    background-color: rgb(187, 9, 9);
+    color: white;
+}
+div.main div.codes button.copy:hover {
+    background-color:blueviolet;
+}
+div.main div.codes p {
+    color:white;
+    border:none;
+    font-family:monospace;
+    font-size: 2em;
+    margin:2px;
+    text-align: center;
+}
+div.main div.codes p i.obj {
+    color: red;
+}
+div.main div.codes p i.comment {
+    color: gray;
+}
+div.main div.codes p i.mth {
+    color: cyan;
+}
+div.main div.codes p i.num {
+    color: rgb(95, 95, 255);
+}
+button.b {
+    background-color: yellow;
+    color:black;
+    display:block;
+    margin:40px auto;
+    padding: 0.5em;
+    cursor: pointer;
+    border-radius: 1em;
+    font-size: 3em;
+    transition:400ms ease-in all;
+}
+button.b:hover {
+    background-color: #444;
+    color:white;
+}
+button.b:active {
+    background-color: red;
+    color:white;
+}
+div.draws div[data-controls] {
+    background-color:transparent;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+div.draws div[data-controls] button {
+    background-color: #151563;
+    color:white;
+    font-size: 2em;
+    padding: 0.5em;
+}
+div.draws div[data-controls] button:hover {
+    background-color:blue;
+}
+div.draws div[data-controls] button:disabled {
+    background-color: #3d3c3c;
+    color:red;
+}
+
+form.arc, form.quadratic, form.bezier {
+    width: max-content;
+    height:auto;
+    background-color: transparent;
+    position:fixed;
+    top:10px;
+    right:5px;
+    left:auto;
+    bottom:auto;
+    z-index: 11;
+}
+form.quadratic,
+form.bezier,
+form.arc fieldset {
+    width: 50vw;
+    height:auto;
+    background-color: rgb(117, 4, 108);
+    color: white;
+    padding:1em;
+    border:none;
+    border-radius: 1em;
+}
+
+form.quadratic .legend,
+form.bezier .legend,
+form.arc fieldset .legend {
+    padding:2px;
+    text-align: center;
+    font-family:monospace;
+    font-size: 2em;
+}
+form.arc fieldset label.radius {
+    width: max-content;
+}
+form.quadratic label,
+form.bezier label,
+form.arc fieldset label {
+    display:block;
+    font-family:monospace;
+    font-size: x-large;
+}
+form.arc fieldset label input[type="number"] {
+    background-color: red;
+    color:white;
+}
+form.arc fieldset label input[type="number"]:in-range {
+    background-color: white;
+    color: black;
+}
+form.quadratic div.accept,
+form.bezier div.accept,
+form.arc fieldset div.accept {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
