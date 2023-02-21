@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<informe>
+    <detail type="error" code="0x001">
+        Este projecto de la aplication Canvas Virtual
+        pocee errores internos de codificación.
+        Debe de ser reescrito desde cero para que se pueda
+        corregir.
+    </detail>
+</informe>
